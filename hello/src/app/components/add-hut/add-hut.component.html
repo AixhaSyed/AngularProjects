@@ -1,0 +1,149 @@
+
+   <form class="ui large form segment" *ngIf="active" (ngSubmit)="onSubmit()" #adForm="ngForm">
+      <h3 class="ui header">Add a Hut</h3>
+
+
+<div class="field">
+          <label for="category">Catogory : </label>
+          <select name="category" #category="ngModel" id='category' required [(ngModel)]="ad.category">
+             <option *ngFor="let c of categories" [value]="c">{{c}}</option>
+          </select>
+          <div [hidden]="category.valid || category.pristine">
+           <!--<i>category is required</i>-->
+        </div>
+      </div>
+      
+      
+
+      <div class="field">
+          <label for=" HutName">Name:</label>
+          <input #HutName="ngModel"  id='HutName' placeholder="" [(ngModel)]="ad. HutName" name=" HutName" required>
+           <div [hidden]=" HutName.valid ||  HutName.pristine" >
+            <i>title is required</i>
+        </div>
+      </div>
+      
+        <div class="field">
+          <label for="PostedDate">PostedDate : </label>
+          <input #PostedDate="ngModel"  id='PostedDate' placeholder="PostedDate" [(ngModel)]="ad.PostedDate" name="PostedDate" required>
+           <div [hidden]="PostedDate.valid || PostedDate.pristine" >
+            <i>title is required</i>
+        </div>
+      </div>
+
+      
+
+<div class="field">
+          <label for=" PostedPerson">PostedPerson: </label>
+          <input #PostedPerson="ngModel" id=' PostedPerson' placeholder=" PostedPerson" name=" PostedPerson" required [(ngModel)]="ad. PostedPerson">
+          <div [hidden]=" PostedPerson.valid ||  PostedPerson.pristine">
+          <i>price is required</i>
+        </div>
+      </div>
+      
+       <div class="field">
+          <label for=" PersonContact">PersonContact: </label>
+          <input #PersonContact="ngModel" id='price' placeholder=" PersonContact" name=" PersonContact" required [(ngModel)]="ad. PersonContact">
+          <div [hidden]=" PersonContact.valid ||  PersonContact.pristine">
+          <i>price is required</i>
+        </div>
+      </div>
+
+       
+
+      <div class="field">
+          <label for=" BookingPrice"> BookingPrice : </label>
+          <input #BookingPrice="ngModel" id='BookingPrice' placeholder=" BookingPrice" name="pric BookingPrice" required [(ngModel)]="ad. BookingPrice">
+          <div [hidden]=" BookingPrice.valid ||  BookingPrice.pristine">
+          <i>price is required</i>
+        </div>
+      </div>
+
+      <div class="field">
+          <label for="Location">Location: </label>
+          <input #Location="ngModel" id='Location' placeholder="Location" name="Location" required [(ngModel)]="ad.Location">
+          <div [hidden]="Location.valid ||Location.pristine">
+          <i>this field is required</i>
+        </div>
+      </div>
+      
+      <!--<div class="field">
+          <label for="image">Image: </label>
+          <input type="file" #image="ngModel" id='imageFile'  name="Image" required  [disabled]="" [(ngModel)]="ad.image">
+          <div [hidden]="image.valid || image.pristine">
+          <i>Image is required</i>
+        </div>
+      </div>-->
+
+      <!--<div class="field">
+      <input type="file" id="imageFile" #image="ngModel" [disabled]="" [(ngModel)]="ad.image"  >
+      </div>-->
+   <!--<div class="field">
+      <input type="file" id="imageFile" #image >
+      </div>-->
+      
+      
+     <!--<div class="form-group">
+
+          <label for="image">Image:</label>
+          <img src="" alt="" #img style="width: 100px; height: 100px;">
+          <br>
+          <br>
+          <input type="file" id="image" required="" (change)="onImageUpload(img, input)" #input>
+
+        </div>
+        -->
+ 
+<!--category,HutName,PostedDate,PostedPerson,PersonContact,BookingPrice, Location,img-->
+  
+ 
+<!--<button type="submit" id="submitBtn" (click)="add(img.src, category.value, HutName.value,PostedDate.value,PostedPerson.value,BookingPrice.value,Location.value)"-->
+
+<button type="submit" id="submitBtn" (click)="add( category.value, HutName.value,PostedDate.value,PostedPerson.value,BookingPrice.value,Location.value)"
+
+      class="ui positive right floated button"[disabled]="!adForm.form.valid" >Submit</button>
+
+      <button type="button" (click)="newAd()" class="ui positive right floated button">New Ad</button>
+
+ 
+   </form >
+
+    <div class="container" #list  *ngFor="let ad of ads; let i = index">
+      
+            <!--<div class="col-xs-12 col-md-4">
+            <img [src]="ad.image"  class="adImg">
+          </div>
+           -->
+     <span style="vertical-align: top;">
+     
+       {{ad.category}} , {{ ad.HutName}} , {{ ad.PostedDate}} , {{ ad.PostedPerson}}, {{ad.PersonContact}},
+          {{ad.BookingPrice}}, {{ad.Location}} 
+     </span> 
+     <!--<br>-->
+     <br>
+     <i class="fa fa-pencil-square-o" aria-hidden="true" id='delete{{i}}' (click)=delete(i)></i>
+     <br>
+      <i class="fa fa-trash" aria-hidden="true" id='edit{{i}}' (click)="edit(i)"></i>
+    
+      <!--</p>-->
+     </div>
+     
+     
+     <!--<p>-->
+       <!--<div class="col-xs-12 col-md-4">
+           
+      <img [src]="ad.img" class="adImg"
+     width='70px' height='70px'/>
+       </div>-->
+         <!--<div class="col-xs-12 col-md-4">
+            <img [src]="ad.img" class="adImg">
+          </div>-->
+           <!--<img [src]="ad.img" class="adImg">-->
+       <!--</p>-->
+     
+     
+      <!--<button type="submit" id="submitBtn" (click)="add(image.value,category.value,title.value,price.value,color.value)"
+      class="ui positive right floated button" [disabled]="!adForm.form.valid">Submit</button>-->
+
+     
+     

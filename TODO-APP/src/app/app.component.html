@@ -1,0 +1,62 @@
+<!--<h1>
+  {{title}}
+</h1>-->
+
+
+<!--<h1>TODO APP </h1>
+<ul>
+<li *ngFor= "let item of list ; i= index">
+<fieldset>
+<input type="textbox" placeholder="Enter Your Task" [(ngModel)="inputItem"]/>
+<input type="button" value="Add" class="Ad" (click)= "add()" />
+<input type="button" value="Delete" class="Del" (click) = "remove(i)"/>
+</fieldset>
+</li>
+</ul>-->
+
+
+
+<h1>ToDo App</h1>
+
+
+<!--<input type="text" [(ngModel)]= "inputItem"/>-->
+<div class="form-horizontal">
+  <div class="form-group form-group-lg">
+    <label class="col-sm-2 control-label" for="formGroupInputLarge" id="hello">TAsk ToDO</label>
+    <div class="col-sm-6">
+      <input type="text" [(ngModel)]="inputItem"  class="form-control" type="text" id="formGroupInputLarge" placeholder="Enter your Task"/>
+    </div>
+  </div>
+  </div>
+
+<button type="button" class = "btn btn-success"  (click)="add()" >Add</button>
+
+<ul>
+    <li *ngFor="let item of list; let i = index">
+        <table>
+            <tr>
+                <td>{{i + " " +  ":"}}</td>
+                <td>{{item}} </td>
+              <br/>
+                <button class="remove" class="btn btn-danger" (click)="remove(i)">Remove</button>  
+            </tr>
+        </table>
+    </li>
+</ul>
+<!--
+  <fieldset id="decorate">  
+<input type="textbox" id="first" placeholder="Enter your Taxk" [(ngModel)]= "inputItem"></br>
+<input type="button" value="Add" id="Addition" (click)="add()" />
+<table id="ToDoListTable" width="150px">{{i + " :"}}</table>
+<table>{{item}} </table>
+<input type="button" value="Delete"  id="deletation" (click)="remove(i)" />
+
+
+<p>
+the total itme is <b id="total"></b>  
+</p>
+    </fieldset>-->
+
+
+
+

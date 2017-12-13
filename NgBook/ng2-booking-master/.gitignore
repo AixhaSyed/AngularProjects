@@ -1,0 +1,13 @@
+.idea
+.DS_Store
+node_modules
+typings
+coverage
+src/*.map.js
+src/*.js
+demo/*.map.js
+demo/*.js
+ng2-booking*.js*
+**/*.d.ts
+**/*.js.map
+test/*.js

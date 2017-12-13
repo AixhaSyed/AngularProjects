@@ -1,0 +1,26 @@
+
+#hello{
+    font-weight: bold;
+    font-size: 27px;
+    color: black;
+    
+    
+}
+
+h1{
+    text-align: center;
+    background-color: lightslategrey;
+    color: floralwhite;
+    text-transform: uppercase;
+    font-family: "Times", 'Times New Roman', Times, serif;
+    width: 65%;
+    padding: 35px auto; 
+    margin: 5px auto;
+    font-size: 40px;
+    height: 40%;
+}
+ul{
+list-style: inside circle;
+width: 300px;}
+li {
+margin: 10px 10px 0px 0px;}

@@ -1,0 +1,27 @@
+<div class="container"> 
+  <div class="row">
+<button (click)="addStudent()">Add Student</button>
+<br/>
+  <table class="table">
+    <thead>
+      <th>RollNo</th>
+      <th>Name</th>
+      <th>Mobile Number</th>
+      <th>Photo</th>
+      <th>Action</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of allStudent ">
+        <td>{{item.rno}}</td>
+        <td>{{item.name | uppercase}}</td>
+        <td>{{item.mobile_no}}</td>
+        <td><span class="thumbnail"><img src="http://localhost:3000{{item.student_img}}" height="150px" width="150px" /></span></td>
+        <td><button (click)="delStudent(item)"><span class="glyphicon glyphicon-trash"></span></button>
+           
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  
+</div>
